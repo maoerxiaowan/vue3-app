@@ -4,11 +4,11 @@
             <div class="foreground">
                 <h3>XX后端管理</h3>
                 <div class="from-input">
-                    <input type="text" class="input" placeholder="  用户名" />
-                    <input type="password" class="input" placeholder="  密  码" />
+                    <input type="text" class="input" placeholder="  用户名" v-model="phone"/>
+                    <input type="password" class="input" placeholder="  密  码" v-model="password"/>
                 </div>
                 <div class="from-button">
-                    <input type="button" value="登录" />
+                    <input type="button" value="登录" @click="login"/>
                     <input type="button" value="注册" />
                 </div>
             </div>
@@ -17,15 +17,31 @@
 </template>
 
 <script>
-export default{
+import axios from 'axios';
+export default {
     name: "Login",
 
     data(){
-
+        return{
+            phone: '',
+            password: '',
+        }
     },
 
-    methods(){
-        
+    methods: {
+        login: function () {
+            axios({
+                withCredentials: true,
+                method: "POST",
+                url: "http://localhost:8000/user/login",
+                params: {
+                    telphone: this.phone,
+                    password: this.password,
+                }
+            }).then((response) => {
+                console.log(response.data)
+            });
+        },
     }
 }
 

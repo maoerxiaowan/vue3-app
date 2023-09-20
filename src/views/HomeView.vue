@@ -2,12 +2,12 @@
     <div class="home">
       <!--    顶部-->
       <div class="header">
-        <h1>XX系统</h1>
+        <h1>后端管理系统</h1>
         <div class="box-user">
-          <!-- <span
-            >账号:{{ this.$store.state.user.id }}<br />
-            用户类型:{{ this.$store.state.user.authority }}
-          </span> -->
+          <span
+            >账号:  测试  <br />
+            用户类型:  测试
+          </span>
           <br />
           <button @click="exit">退出</button>
         </div>
@@ -55,7 +55,7 @@
     width: 100%;
     border-bottom: 1px solid rgb(0, 0, 0);
     line-height: 100px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
   }
   
   .box-user {
@@ -72,13 +72,13 @@
   .box {
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    /* border: 1px solid black; */
   }
   
   .box-left {
     width: 16vw;
     height: calc(100vh - 100px);
-    border: 1px solid black;
+    /* border: 1px solid black; */
   }
   
   .box-right {
